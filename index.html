@@ -3,50 +3,190 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hunor Portik - Software Developer</title>
+    <title>Hunor Portik - Senior Data Engineer (P3)</title>
     <style>
-        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
-        .header { text-align: center; margin-bottom: 30px; }
-        .section { margin-bottom: 25px; }
-        .experience { margin-bottom: 15px; }
+        :root {
+            --bg: #fff;
+            --text: #333;
+            --text-light: #666;
+            --text-lighter: #888;
+            --text-lightest: #999;
+            --heading: #222;
+            --heading-secondary: #444;
+            --border: #f4f4f4;
+            --border-light: #eee;
+            --link: #007bff;
+        }
+
+        :root.dark {
+            --bg: #1a1a1a;
+            --text: #e0e0e0;
+            --text-light: #b0b0b0;
+            --text-lighter: #808080;
+            --text-lightest: #666;
+            --heading: #f0f0f0;
+            --heading-secondary: #d0d0d0;
+            --border: #333;
+            --border-light: #2a2a2a;
+            --link: #5ba3ff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--bg);
+            transition: background 0.3s, color 0.3s;
+        }
+        header { text-align: center; margin-bottom: 40px; border-bottom: 2px solid var(--border); padding-bottom: 20px; }
+        h1 { margin: 0; font-size: 2.2em; color: var(--heading); }
+        h2 { margin: 5px 0 15px; color: var(--text-light); font-weight: 400; font-size: 1.3em; }
+        .theme-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 1.5em;
+            cursor: pointer;
+            color: var(--text);
+        }
+        .contact-links { font-size: 0.95em; }
+        .contact-links a { margin: 0 10px; color: var(--link); text-decoration: none; font-weight: 500; }
+        .contact-links a:hover { text-decoration: underline; }
+        .section { margin-bottom: 30px; }
+        h3 { border-bottom: 1px solid var(--border-light); padding-bottom: 5px; text-transform: uppercase; font-size: 1.1em; color: var(--heading-secondary); margin-bottom: 15px; }
+        .job { margin-bottom: 20px; }
+        .job-header { display: flex; justify-content: space-between; align-items: baseline; }
+        .job-title { font-weight: bold; font-size: 1.1em; }
+        .job-date { color: var(--text-lighter); font-size: 0.9em; }
+        ul { padding-left: 20px; margin: 10px 0; }
+        li { margin-bottom: 6px; }
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; }
+        .skill-item strong { display: block; margin-bottom: 4px; color: var(--text-light); font-size: 0.9em; }
+        footer { text-align: center; margin-top: 50px; font-size: 0.85em; color: var(--text-lightest); }
     </style>
 </head>
 <body>
-    <div class="header">
+
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">🌙</button>
+
+    <header>
         <h1>HUNOR PORTIK</h1>
-        <h2>Software Developer</h2>
-        <p>Hungary | hunor@portik.dev | <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://portik.dev/Hunor_Portik_CV.pdf" target="_blank">View CV</a></p>
-    </div>
+        <h2>Senior Data Engineer (P3)</h2>
+        <div class="contact-links">
+            <a href="mailto:hunor@portik.dev">✉️ hunor@portik.dev</a>
+            <a href="https://linkedin.com/in/hunor-portik" target="_blank">💼 LinkedIn</a>
+            <a href="https://github.com/portikCoder" target="_blank">⌘ GitHub</a>
+            <a href="https://portik.dev/Hunor_Portik_CV.pdf" target="_blank">📄 CV</a>
+        </div>
+    </header>
 
     <div class="section">
         <h3>About Me</h3>
-        <p>Python-focused Software Developer & DevOps Engineer with 6+ years of experience designing scalable automation solutions and mentoring teams. I specialize in transforming manual processes into intelligent automation - reducing deployment times from weeks to hours.</p>
+        <p>
+            Senior Data Engineer specializing in scalable data pipelines, high-availability storage, and operational excellence. 
+            I maintain <strong>99.9%+ system uptime</strong> for business-critical data flows and have a proven track record of unblocking 
+            large-scale releases for BigQuery Data Warehouses. Expert in clean, idiomatic Python with a <strong>growing proficiency in Go</strong>, 
+            focused on SOLID design and active Apache Beam OSS contributions.
+        </p>
     </div>
 
     <div class="section">
         <h3>Professional Experience</h3>
-        <div class="experience">
-            <h4>Software Developer / DevOps | Ericsson | 2019-Present</h4>
+        
+        <div class="job">
+            <div class="job-header">
+                <span class="job-title">Senior Data Engineer (P3) | Bloomreach</span>
+                <span class="job-date">2021 – Present</span>
+            </div>
             <ul>
-                <li><strong>Reduced installation time by 95%</strong> - automated complex product deployment</li>
-                <li><strong>Led technical mentorship</strong> - guided 2+ junior developers</li>
-                <li><strong>Optimized CI/CD pipelines</strong> - improved development speed and quality</li>
+                <li><strong>Maintained 99.9%+ system uptime</strong> by responding to 100+ incidents as the Primary On-Call engineer throughout 2025.</li>
+                <li><strong>Unblocked pipeline improvement releases</strong> for the BigQuery Data Warehouse as Project Owner, facilitating successful rollout to initial customers.</li>
+                <li><strong>Engineered service extensions</strong> for external data connectors, enabling high-throughput data ingestion and routing pipelines.</li>
+                <li><strong>Contributed to Apache Beam OSS</strong>, establishing a team precedent for resolving critical operator issues during warehouse feature launches.</li>
+            </ul>
+        </div>
+
+        <div class="job">
+            <div class="job-header">
+                <span class="job-title">Software Developer / DevOps | Ericsson</span>
+                <span class="job-date">2019 – 2021</span>
+            </div>
+            <ul>
+                <li><strong>Reduced installation time by 95%</strong> (from weeks to 3 hours) by architecting an automated deployment system using Ansible and Jenkins.</li>
+                <li><strong>Automated dependency usage reporting</strong> for dozens of teams, saving days of manual effort per cycle through custom Python tooling.</li>
+                <li><strong>Optimized mobile network continuity</strong> by developing and deploying dockerized Spring micro-services in live production environments.</li>
             </ul>
         </div>
     </div>
 
     <div class="section">
         <h3>Technical Skills</h3>
-        <ul>
-            <li><strong>Languages:</strong> Python 3.6+, Bash, SQL, Java 8, Groovy</li>
-            <li><strong>DevOps:</strong> Docker, Ansible, CI/CD, Git, SonarQube</li>
-            <li><strong>Frameworks:</strong> Flask, Django, Spring Boot, Angular</li>
-        </ul>
+        <div class="skills-grid">
+            <div class="skill-item">
+                <strong>Programming</strong>
+                Python (SOLID), Go
+            </div>
+            <div class="skill-item">
+                <strong>Data Engineering</strong>
+                BigQuery Warehouse, Apache Beam (OSS), Kafka, GCP Dataflow, MongoDB
+            </div>
+            <div class="skill-item">
+                <strong>Infrastructure & OS</strong>
+                Kubernetes, Terraform, Docker, Ubuntu Server, GCP
+            </div>
+            <div class="skill-item">
+                <strong>Frameworks & Tools</strong>
+                FastAPI, PyTest, Prometheus, Grafana, GitLab
+            </div>
+        </div>
     </div>
 
-    <div class="section">
-        <h3>Contact</h3>
-        <p>📧 hunor@portik.dev | 💼 LinkedIn | 💻 GitHub</p>
-    </div>
+    <footer>
+        &copy; 2026 Hunor Portik. Built for minimalism.
+    </footer>
+
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        const htmlElement = document.documentElement;
+
+        // Detect system preference
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const savedTheme = localStorage.getItem('theme');
+
+        // Apply saved theme or system preference
+        if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+            htmlElement.classList.add('dark');
+            themeToggle.textContent = '☀️';
+        } else {
+            themeToggle.textContent = '🌙';
+        }
+
+        // Toggle on button click
+        themeToggle.addEventListener('click', () => {
+            htmlElement.classList.toggle('dark');
+            const isDark = htmlElement.classList.contains('dark');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            themeToggle.textContent = isDark ? '☀️' : '🌙';
+        });
+
+        // Listen for system theme changes
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+            if (!localStorage.getItem('theme')) {
+                if (e.matches) {
+                    htmlElement.classList.add('dark');
+                    themeToggle.textContent = '☀️';
+                } else {
+                    htmlElement.classList.remove('dark');
+                    themeToggle.textContent = '🌙';
+                }
+            }
+        });
+    </script>
+
 </body>
 </html>
